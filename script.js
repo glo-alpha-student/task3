@@ -1,40 +1,28 @@
 'use strict';
 
 
-let askProject = prompt('Как называется ваш проект?');
-let title = askProject;
+const title = prompt('Как называется ваш проект?');
 
 
-let askMonitor = prompt('Какие типы экранов нужно разработать?');
-let screens = askMonitor;
+const screens = prompt('Какие типы экранов нужно разработать?');
 
 
-let askPrice = prompt('Сколько будет стоить данная работа?');
-let screenPrice = parseInt(askPrice);
+
+const screenPrice = +prompt('Сколько будет стоить данная работа?');
+parseInt(screenPrice);
 
 
-let askAdaptive = prompt('Нужен ли адаптив на сайте? \n да/нет');
-let adaptive;
-switch (askAdaptive) {
-    case 'да':
-        adaptive = true;
-        break;
-    case 'нет':
-    default: adaptive = false;
-}
+let adaptive = prompt('Нужен ли адаптив на сайте?');
 
+const service1 = prompt('Какой дополнительный тип услуги нужен?');
 
-let askService1 = prompt('Какой дополнительный тип услуги нужен?');
-let service1 = askService1;
+const service2 = prompt('Какой дополнительный тип услуги нужен?');
 
-let askService2 = prompt('Какой дополнительный тип услуги нужен?');
-let service2 = askService2;
+const servicePrice1 = +prompt('Сколько это будет стоить?');
+parseInt(servicePrice1);
 
-let askServicePrice1 = prompt('Сколько это будет стоить?');
-let servicePrice1 = parseInt(askServicePrice1);
-
-let askServicePrice2 = prompt('Сколько это будет стоить?');
-let servicePrice2 = parseInt(askServicePrice2);
+const servicePrice2 = +prompt('Сколько это будет стоить?');
+parseInt(servicePrice2);
 
 const fullPrice = screenPrice + servicePrice1 + servicePrice2;
 
@@ -43,9 +31,9 @@ console.log(servicePercentPrice + ' рублей');
 
 if (fullPrice > 30000) {
     console.log('Даем скидку в 10%');
-} else if (15000 < fullPrice && fullPrice < 30000) {
+} else if (fullPrice > 15000) {
     console.log('Даем скидку в 5%');
-} else if (15000 > fullPrice && fullPrice > 0) {
+} else if (fullPrice > 0) {
     console.log('Скидка не предусмотрена');
 } else {
     console.log('Что-то пошло не так');
